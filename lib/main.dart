@@ -29,7 +29,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Title"),
+        leading: const Icon(Icons.dataset),
+        title: const Text("AppBar Name"),
+        actions: [
+          ElevatedButton.icon(onPressed: (){}, icon: Icon(Icons.airplanemode_inactive), label: Text("User"))
+        ],
       ),
       body: const Center(
       ),
