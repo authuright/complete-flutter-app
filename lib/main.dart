@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,9 +28,30 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Title"),
+        title: const Text("Elevated Button"),
       ),
-      body: const Center(
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 0, horizontal: 30.0),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: const StadiumBorder(),
+              elevation: 20,
+              shadowColor: Colors.lightBlueAccent,
+              minimumSize: const Size.fromHeight(60),
+            ),
+            onPressed: () {
+              return print("Hello");
+            },
+            child: Text(
+              "Hello Flutter",
+              style: TextStyle(
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
