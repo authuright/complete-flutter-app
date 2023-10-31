@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,7 +31,22 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("App Title"),
       ),
       body: const Center(
+        child: Text("Floating Action Button"),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print("Hello World");
+        },
+        child: Icon(Icons.add),
+      ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   label: Text("Add"),
+      //     icon: Icon(Icons.add),
+      //     onPressed: () {
+      //       print("Hello World");
+      //     },
+      //   ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
