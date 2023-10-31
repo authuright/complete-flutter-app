@@ -29,9 +29,36 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Title"),
+        title: const Text("Row Widget"),
       ),
-      body: const Center(
+      body: Center(
+        child: Row(
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          // crossAxisAlignment: CrossAxisAlignment.end,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 70.0,
+              height: 70.0,
+              color: Colors.blueAccent,
+            ),
+            Container(
+              width: 70.0,
+              height: 70.0,
+              color: Colors.yellowAccent,
+            ),
+            Container(
+              width: 70.0,
+              height: 70.0,
+              color: Colors.pinkAccent,
+            ),
+          ],
+        ),
       ),
     );
   }
