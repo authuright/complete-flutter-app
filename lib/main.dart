@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +30,22 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App Title"),
       ),
-      body: const Center(
+      body: Center(
+        child: IconButton(
+          onPressed: () {},
+          constraints: BoxConstraints(
+            maxHeight: double.infinity,
+
+          ),
+          icon: const Icon(
+            Icons.add,
+          ),
+          iconSize: 50.0,
+          padding: const EdgeInsets.all(10.0),
+          color: Colors.red,
+          hoverColor: Colors.green,
+          highlightColor: Colors.redAccent,
+        ),
       ),
     );
   }
