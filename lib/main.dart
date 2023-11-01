@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,9 +28,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Title"),
+        title: const Text("Outline Button"),
       ),
-      body: const Center(
+      body: Center(
+        child: OutlinedButton(
+
+          onPressed: () {},
+          child: Text(
+            "Outline Button",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          style: OutlinedButton.styleFrom(
+            backgroundColor: Colors.redAccent,
+          ),
+        ),
       ),
     );
   }
