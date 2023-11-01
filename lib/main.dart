@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +30,31 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App Title"),
       ),
-      body: const Center(
+      body: ListView(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10.0),
+            height: 50,
+            color: Colors.redAccent,
+            child: const Center(
+              child:Text("Text 1"),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10.0),
+            height: 50,
+            color: Colors.yellowAccent,
+            child: const Center(
+              child: const Center(child:Text("Text 2")),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10.0),
+            height: 50,
+            color: Colors.blueAccent,
+            child: const Center(child:Text("Text 3"),),
+          ),
+        ],
       ),
     );
   }
