@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,9 +28,35 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Title"),
+        title: const Text("SnackBar Widget"),
       ),
-      body: const Center(
+      body: Center(
+        child: ElevatedButton(
+          child: const Text("Show Snackbar"),
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: const Text(
+                  "Awsome Snackbar",
+                ),
+                action: SnackBarAction(
+                  label: "Action",
+                  onPressed: () {},
+                ),
+                duration: const Duration(milliseconds: 1500),
+                width: 280.0,
+                // Width of the SnackBar.
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8.0, // Inner padding for SnackBar content.
+                ),
+                behavior: SnackBarBehavior.floating,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
