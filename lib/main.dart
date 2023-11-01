@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,10 +28,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Title"),
+        actions: [
+          Icon(Icons.notifications_active),
+        ],
+        title: const Text("Drawer"),
       ),
       body: const Center(
+        child: Text("Hello World"),
       ),
+      drawer: Drawer(),
     );
   }
 }
