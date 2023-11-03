@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +9,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Range Slide"),
+        ),
+        body: const MyHomePage(),
+      ),
     );
   }
 }
@@ -25,14 +29,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  RangeValues _currentRangeValues = const RangeValues(40, 80);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("App Title"),
+    return RangeSlider(
+      values: _currentRangeValues,
+      max: 100,
+      divisions: 5,
+      labels: RangeLabels(
+        _currentRangeValues.start.round().toString(),
+        _currentRangeValues.end.round().toString(),
       ),
-      body: const Center(
-      ),
+      onChanged: (RangeValues values) {
+        setState(() {
+          _currentRangeValues = values;
+        });
+      },
     );
   }
 }
